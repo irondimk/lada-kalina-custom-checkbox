@@ -1,0 +1,172 @@
+/*Обнуление*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------*/
+
+.content{
+    width: 600px;
+    margin: 0 auto;
+    padding: 100px;
+}
+
+.lada-checkbox{
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    position: relative;
+    background: rgb(49, 49, 49);
+    -webkit-appearance: none;
+    box-shadow: -5px -5px 10px #4B4848,
+    5px 5px 10px rgb(0, 0, 0),
+    inset -5px -5px 10px #4B4848,
+    inset 5px 5px 10px rgb(0, 0, 0),
+    0 0 0 30px rgb(19, 19, 19);
+    position: relative;
+}
+.who{
+    background: rgb(19, 19, 19);
+}
+.lada-checkbox:after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 50px;
+    background: rgb(56, 56, 56);
+    left: 48%;
+    top: -30px;
+    
+    transform: rotate(-30deg);
+    transform-origin: 0px 160px;
+    transition: all .6s ease-out;
+    border-bottom-left-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+    
+}
+
+.lada-checkbox:checked::after{
+    content: "";
+   position: absolute;
+   display: block;
+   width: 10px;
+   height: 50px; 
+   background: rgb(42, 141, 17);
+   
+   transform: rotate(30deg);
+   transform-origin: 0px 160px;
+} 
+
+.lada-checkbox:before{
+    content: '';
+    position: absolute;
+    left: 36%;
+    top: -30px;
+    content: "";
+    display: inline-block;
+    transform: rotate(-30deg);
+    
+    border: 5px solid rgb(29, 29, 29);
+    width: 70px;
+    height: 320px;
+    border-top-left-radius: 17px 300px;
+    border-top-right-radius: 17px 300px;
+    border-bottom-left-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 -3px 20px 7px #131313;
+    transition: all .6s ease-out;
+}
+
+.main{
+    position: relative;
+    /* display: block;
+    width: 350px;
+    height: 350px;
+    background: blue;
+    left: 0;
+    top: 0;
+    border-radius: 50%; */
+}
+
+.background{
+    display: block;
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.897);
+    box-shadow: inset -5px -5px 10px 5px #383838,
+    -5px -5px 50px 1px black;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    position: absolute;
+    left: -70px;
+    top: -330px;
+    z-index: -1;
+}
+
+.lada-checkbox:checked{
+    background: rgb(42, 141, 17);
+    box-shadow: -5px -5px 10px #4B4848,
+    5px 5px 10px rgb(0, 0, 0),
+    inset -5px -5px 10px rgb(20, 66, 8),
+    inset 5px 5px 10px rgb(0, 0, 0),
+    0 0 0 30px rgb(19, 19, 19);
+}
+
+.lada-checkbox:checked::before{
+    
+    transform: rotate(30deg);
+    box-shadow: -19px 0 15px 6px #1f1e1e9c;
+}
+
+.icon{
+    transition: all .6s ease-out;
+}
+.icon:before{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-image: url('./img/cir_gr.png');
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 20px;
+    top: -290px;
+    transition: all .6s ease-out;
+}
+
+.lada-checkbox:checked + .icon:before{
+    background-image: url('./img/cir_green.png');
+}
+
+.icon:after{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-image: url('./img/light_grey.png');
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 205px;
+    top: -294px;
+    transition: all .6s ease-out;
+}
+
+.lada-checkbox:checked + .icon:after{
+    background-image: url('./img/light_green.png');
+}
